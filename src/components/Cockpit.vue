@@ -13,9 +13,6 @@
 <script>
 export default {
   name: 'Cockpit',
-  props: {
-    msg: String
-  }
 }
 </script>
 
