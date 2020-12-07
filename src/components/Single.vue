@@ -8,13 +8,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
   name: 'Single',
-  props: {
-    selected: {
-      type: Number,
-      default: 0
-    }
+  computed: {
+    ...mapGetters([
+      'selected'
+    ])
   }
 }
 </script>

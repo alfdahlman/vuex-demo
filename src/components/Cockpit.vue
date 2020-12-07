@@ -3,18 +3,21 @@
     <div class="sort-control">
       <span>Sort list:</span>
       <p
-        @click="$emit('onSort', 'asc')">asc</p>
+        @click="sortNumbers('asc')">asc</p>
       <p
-        @click="$emit('onSort', 'desc')">desc</p>
+        @click="sortNumbers('desc')">desc</p>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: 'Cockpit',
-  props: {
-    msg: String
+  methods: {
+    ...mapActions([
+      'sortNumbers'
+    ])
   }
 }
 </script>

@@ -1,13 +1,14 @@
 <template>
   <div
     class="list-item"
-    @click="$emit('onSelectNumber', number)"
+    @click="selectNumber(number)"
   >
     <p>{{ number }}</p>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: 'ListItem',
   props: {
@@ -16,6 +17,11 @@ export default {
       required: true
     }
   },
+  methods: {
+    ...mapActions([
+      'selectNumber'
+    ])
+  }
 }
 </script>
 

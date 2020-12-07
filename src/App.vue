@@ -1,14 +1,8 @@
 <template>
   <div id="app">
-    <Cockpit
-      @onSort="sortNumbers"
-    />
-    <List
-      :numbers="numbers"
-      @onSelectNumber="selectNumber"
-    />
-    <Single
-      :selected="selected"/>
+    <Cockpit />
+    <List />
+    <Single />
   </div>
 </template>
 
@@ -23,30 +17,6 @@ export default {
     Cockpit,
     List,
     Single
-  },
-  data() {
-    return {
-      numbers: [1,2,3,4,5,6,7,8,9,10],
-      selected: 0
-    }
-  },
-  methods: {
-    selectNumber(val){
-      return this.selected = val;
-    },
-    sortNumbers(order){
-      const numbers = [ ...this.numbers ];
-
-      numbers.sort((a, b) => {
-        return a - b;
-      });
-
-      if(order === 'desc'){
-        numbers.reverse();
-      }
-
-      this.numbers = numbers;
-    }
   }
 }
 </script>

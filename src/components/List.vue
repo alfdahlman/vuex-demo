@@ -4,24 +4,23 @@
       v-for="( number, index ) in numbers"
       :key="index"
       :number="number"
-      v-on="$listeners"
     />
   </div>
 </template>
 
 <script>
 import ListItem from './subcomponents/ListItem.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'List',
   components: {
     ListItem,
   },
-  props: {
-    numbers: {
-      type: Array,
-      default: () => []
-    },
+  computed: {
+    ...mapGetters([
+      'numbers'
+    ])
   }
 }
 </script>
