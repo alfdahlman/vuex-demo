@@ -1,4 +1,4 @@
-# starwars-vue
+# vuex demo
 
 ## Project setup
 ```
